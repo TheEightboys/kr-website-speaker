@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Book KR Henderson - Work With KR</title>
+    <title>Speaker Agreement - New Vision Enterprise</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -34,11 +34,12 @@
           <span class="pill">Book KR Henderson</span>
           <h1 class="tagline">Bring Transformation to Your Organization</h1>
           <p class="subhead">
-            Download the speaker agreement and complete the online request form. You can submit the
-            form without downloading, or download the agreement for your records.
+            Review the speaker agreement in a polished document view, then complete the request form below.
+            The agreement opens with a click so you can read it without leaving the page.
           </p>
           <div class="hero-cta">
-            <a class="btn" href="form.jpg" download>Download Agreement</a>
+            <a class="btn js-open-agreement" href="#agreement-modal">View Agreement</a>
+            <a class="btn secondary" href="form.jpg" download>Download PDF</a>
             <a class="btn secondary js-print" href="#">Print This Page</a>
           </div>
         </div>
@@ -53,15 +54,48 @@
         <div class="reveal">
           <h2 class="section-title">Agreement Preview</h2>
           <p class="section-subtitle">
-            Review the agreement below or download the image file for your archive.
+            Click to open a clean, full-size preview of the speaker agreement.
           </p>
-          <div class="card">
-            <img src="form.jpg" alt="Speaker agreement form" />
+          <div class="agreement-preview card">
+            <div class="agreement-preview__header">
+              <div>
+                <p class="agreement-kicker">Speaker Agreement</p>
+                <h3>New Vision Enterprise</h3>
+              </div>
+              <button class="btn js-open-agreement" type="button" data-target="agreement-modal">Open</button>
+            </div>
+            <p class="agreement-preview__copy">
+              A more professional review experience for bookings, approvals, and records.
+            </p>
+            <button class="agreement-preview__thumb js-open-agreement" type="button" data-target="agreement-modal">
+              <img src="form.jpg" alt="Speaker agreement form" />
+            </button>
           </div>
         </div>
         <div class="form-wrap reveal">
-          <h2 class="section-title">Speaker Request Form</h2>
-          <form>
+          <div class="agreement-cover">
+            <p class="agreement-kicker">Speaker Booking</p>
+            <h2 class="section-title">Request Details</h2>
+            <p class="agreement-cover__text">
+              A clean, document-style booking panel for speaking engagements, workshops, and organizational training.
+            </p>
+            <div class="agreement-cover__stats">
+              <div>
+                <strong>Fast Review</strong>
+                <span>Clear request fields</span>
+              </div>
+              <div>
+                <strong>Document Ready</strong>
+                <span>Printable agreement flow</span>
+              </div>
+              <div>
+                <strong>Professional</strong>
+                <span>Built for serious bookings</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="agreement-form-title">Speaker Request Form</h3>
+          <form class="agreement-form">
             <div>
               <label for="org">Organization</label>
               <input id="org" name="org" type="text" placeholder="Organization name" />
@@ -90,7 +124,7 @@
                 <option>Hybrid</option>
               </select>
             </div>
-            <div>
+            <div class="agreement-form__full">
               <label for="details">Event Details</label>
               <textarea id="details" name="details" placeholder="Event goals, audience, and expectations"></textarea>
             </div>
@@ -98,7 +132,7 @@
               <label for="signature">Typed Signature</label>
               <input id="signature" name="signature" type="text" placeholder="Full name" />
             </div>
-            <button class="btn" type="submit">Submit Request</button>
+            <button class="btn agreement-form__submit" type="submit">Submit Request</button>
           </form>
         </div>
       </div>
@@ -129,6 +163,29 @@
         </div>
       </div>
     </footer>
+
+    <div class="agreement-modal" id="agreement-modal" aria-hidden="true">
+      <div class="agreement-modal__backdrop js-close-agreement" aria-hidden="true"></div>
+      <div class="agreement-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="agreement-modal-title">
+        <div class="agreement-modal__header">
+          <div>
+            <p class="agreement-kicker">Speaker Agreement</p>
+            <h2 id="agreement-modal-title">New Vision Enterprise</h2>
+          </div>
+          <button class="agreement-modal__close js-close-agreement" type="button" aria-label="Close agreement preview">&times;</button>
+        </div>
+        <p class="agreement-modal__text">
+          Review the agreement in a cleaner, more professional format. Use the download button if you want a copy for your records.
+        </p>
+        <div class="agreement-modal__content">
+          <img src="form.jpg" alt="Speaker agreement form enlarged" />
+        </div>
+        <div class="agreement-modal__actions">
+          <a class="btn" href="form.jpg" download>Download Copy</a>
+          <button class="btn secondary js-close-agreement" type="button">Close</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

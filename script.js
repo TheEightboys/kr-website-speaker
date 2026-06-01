@@ -22,3 +22,41 @@ printButtons.forEach((button) => {
     window.print();
   });
 });
+
+const agreementModal = document.querySelector(".agreement-modal");
+const openAgreementButtons = document.querySelectorAll(".js-open-agreement");
+const closeAgreementButtons = document.querySelectorAll(".js-close-agreement");
+
+function openAgreementModal() {
+  if (!agreementModal) return;
+  agreementModal.classList.add("is-open");
+  agreementModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeAgreementModal() {
+  if (!agreementModal) return;
+  agreementModal.classList.remove("is-open");
+  agreementModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+openAgreementButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    openAgreementModal();
+  });
+});
+
+closeAgreementButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeAgreementModal();
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeAgreementModal();
+  }
+});
