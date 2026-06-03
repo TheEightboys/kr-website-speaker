@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Second Wind - New Vision Enterprise</title>
+    <meta name="description" content="Second Wind — for men who found purpose later, accepted new assignments, and are ready to move correctly this time." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -32,17 +35,11 @@
       <div class="container hero-grid">
         <div class="reveal">
           <span class="pill">Second Wind</span>
-          <h1 class="tagline">Your Second Wind Starts Here</h1>
-          <p class="subhead">
+          <h1 class="tagline" data-cms-key="hero.title">Your Second Wind Starts Here</h1>
+          <p class="subhead" data-cms-key="hero.subtitle">
             This man has actually lived what he's teaching.
             Second Wind is for men who found purpose later, or accepted new assignments later.
             This is not about starting over. It is about recognizing that life unfolds in seasons, and some of the most important assignments arrive in the second half of the journey.
-          </p>
-          <p class="subhead">
-            Understand....<br>
-            You're not behind.<br>
-            You're not late.<br>
-            You're assigned.
           </p>
           <div class="hero-cta">
             <a class="btn" href="monetization.html">Start the 30-Day Reset</a>
@@ -50,16 +47,16 @@
           </div>
         </div>
         <div class="image-stack reveal">
-          <img src="logos/secondwind.png" alt="Second Wind" />
-          <div class="tile">Second Shot. Late Purpose. Carrying More.</div>
+          <img src="logos/secondwind.png" alt="Second Wind" data-cms-key="hero.image_url" data-cms-type="image" />
+          <div class="tile" data-cms-key="hero.tile_text">Second Shot. Late Purpose. Carrying More.</div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Second Wind Is For:</h2>
-        <p class="section-subtitle reveal">
+        <h2 class="section-title reveal" data-cms-key="for_whom.title">Second Wind Is For:</h2>
+        <p class="section-subtitle reveal" data-cms-key="for_whom.subtitle">
           The men who feel behind, carry weight silently, rebuild after re-assignment, and who have purpose later in life.
         </p>
         <div class="grid-3">
@@ -81,7 +78,7 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">What Second Wind Offers</h2>
+        <h2 class="section-title reveal" data-cms-key="offers.title">What Second Wind Offers</h2>
         <div class="grid-3">
           <div class="card reveal">
             <h3>Podcast</h3>
@@ -105,8 +102,8 @@
     <section class="section">
       <div class="container banner reveal">
         <div>
-          <h2 class="section-title">Ready for Your Second Wind?</h2>
-          <p class="section-subtitle">The transformation starts with a single step.</p>
+          <h2 class="section-title" data-cms-key="banner.title">Ready for Your Second Wind?</h2>
+          <p class="section-subtitle" data-cms-key="banner.subtitle">The transformation starts with a single step.</p>
         </div>
         <div class="hero-cta">
           <a class="btn" href="monetization.html">Get Started</a>
@@ -129,5 +126,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cms.js"></script>
   </body>
 </html>

@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Author - New Vision Enterprise</title>
+    <meta name="description" content="Books by KR Henderson — direct, practical, and built for application. No fluff. Just structure." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -32,8 +35,8 @@
       <div class="container hero-grid">
         <div class="reveal">
           <span class="pill">Author</span>
-          <h1 class="tagline">Books by KR Henderson</h1>
-          <p class="subhead">
+          <h1 class="tagline" data-cms-key="hero.title">Books by KR Henderson</h1>
+          <p class="subhead" data-cms-key="hero.subtitle">
             KR Henderson writes the same way he speaks: direct, practical, and built for application.
             No fluff. No theory. Just structure.
           </p>
@@ -43,32 +46,30 @@
           </div>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/26.png" alt="KR Henderson author portrait" />
+          <img src="pictures%20for%20web/26.png" alt="KR Henderson author portrait" data-cms-key="hero.image_url" data-cms-type="image" />
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Featured Titles</h2>
-        <p class="section-subtitle reveal">All books are available for sale on this website.</p>
+        <h2 class="section-title reveal" data-cms-key="books.title">Featured Titles</h2>
+        <p class="section-subtitle reveal" data-cms-key="books.subtitle">All books are available for sale on this website.</p>
         <div class="books">
           <div class="book reveal">
-            <img src="bookswritten/820.jpg" alt="The Lion's Den book cover" />
-            <h3>The Lion's Den: 4 Pillars of Male Success</h3>
-            <p class="subhead"><strong>Best Seller on Amazon</strong></p>
-            <p class="subhead">Leadership. Relationships. Health. Emotional resilience.</p>
+            <img src="bookswritten/820.jpg" alt="The Lion's Den book cover" data-cms-key="book1.image_url" data-cms-type="image" />
+            <h3 data-cms-key="book1.title">The Lion's Den: 4 Pillars of Male Success</h3>
+            <p class="subhead" data-cms-key="book1.subtitle"><strong>Best Seller on Amazon</strong> — Leadership. Relationships. Health. Emotional resilience.</p>
           </div>
           <div class="book reveal">
-            <img src="bookswritten/whoy.png" alt="The Art of Personal Development - WHOY" />
-            <h3>The Art of Personal Development - WHOY</h3>
-            <p class="subhead">Work harder on yourself than anything around you.</p>
+            <img src="bookswritten/whoy.png" alt="The Art of Personal Development - WHOY" data-cms-key="book2.image_url" data-cms-type="image" />
+            <h3 data-cms-key="book2.title">The Art of Personal Development - WHOY</h3>
+            <p class="subhead" data-cms-key="book2.subtitle">Work harder on yourself than anything around you.</p>
           </div>
           <div class="book reveal">
-            <img src="bookswritten/73.png" alt="Major Max Shorty: The Discovery Place" />
-            <h3>Major Max Shorty: The Discovery Place</h3>
-            <p class="subhead"><strong>Kids Book</strong></p>
-            <p class="subhead">A story about identity, discovery, and purpose.</p>
+            <img src="bookswritten/73.png" alt="Major Max Shorty: The Discovery Place" data-cms-key="book3.image_url" data-cms-type="image" />
+            <h3 data-cms-key="book3.title">Major Max Shorty: The Discovery Place</h3>
+            <p class="subhead" data-cms-key="book3.subtitle"><strong>Kids Book</strong> — A story about identity, discovery, and purpose.</p>
           </div>
         </div>
       </div>
@@ -77,8 +78,8 @@
     <section class="section">
       <div class="container banner reveal">
         <div>
-          <h2 class="section-title">Author Positioning</h2>
-          <p class="section-subtitle">Direct. Practical. Built for application.</p>
+          <h2 class="section-title" data-cms-key="banner.title">Author Positioning</h2>
+          <p class="section-subtitle" data-cms-key="banner.subtitle">Direct. Practical. Built for application.</p>
         </div>
         <div class="hero-cta">
           <a class="btn" href="monetization.html">Get the Books</a>
@@ -101,5 +102,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cms.js"></script>
   </body>
 </html>

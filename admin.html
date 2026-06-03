@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel — KR New Vision Enterprise</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="admin.css" />
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+</head>
+<body>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loading-overlay">
+  <div class="loading-spinner"></div>
+  <div class="loading-text">Loading Admin Panel...</div>
+</div>
+
+<!-- ============================================================ LOGIN ============================================================ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-icon">🏢</div>
+      <div class="login-logo-text">
+        New Vision Enterprise
+        <span>Admin Panel</span>
+      </div>
+    </div>
+    <div class="login-title">Welcome Back</div>
+    <div class="login-subtitle">Sign in to manage your website content</div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label class="form-label" for="login-email">Email Address</label>
+        <input class="form-input" id="login-email" type="email" value="krnewvision@gmail.com" autocomplete="email" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="login-password">Password</label>
+        <input class="form-input" id="login-password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+      </div>
+      <button class="btn-primary" type="submit" id="login-btn">
+        Sign In to Admin Panel
+      </button>
+      <div class="login-error" id="login-error"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================ ADMIN APP ============================================================ -->
+<div id="admin-app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-icon">⚙️</div>
+        <div class="sidebar-brand-name">
+          KR Admin
+          <span>Content Manager</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">Overview</div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-tab="dashboard" onclick="switchTab('dashboard', this)">
+        <span class="nav-item-icon">🏠</span> Dashboard
+      </button>
+    </nav>
+
+    <div class="sidebar-section-label">Pages</div>
+    <nav class="sidebar-nav">
+      <button class="nav-item" data-tab="index" onclick="switchTab('index', this)">
+        <span class="nav-item-icon">🌐</span> Home (Index)
+      </button>
+      <button class="nav-item" data-tab="about" onclick="switchTab('about', this)">
+        <span class="nav-item-icon">👤</span> About
+      </button>
+      <button class="nav-item" data-tab="author" onclick="switchTab('author', this)">
+        <span class="nav-item-icon">📚</span> Author / Books
+      </button>
+      <button class="nav-item" data-tab="second-wind" onclick="switchTab('second-wind', this)">
+        <span class="nav-item-icon">💨</span> Second Wind
+      </button>
+      <button class="nav-item" data-tab="whoy" onclick="switchTab('whoy', this)">
+        <span class="nav-item-icon">💪</span> WHOY
+      </button>
+      <button class="nav-item" data-tab="work-with-kr" onclick="switchTab('work-with-kr', this)">
+        <span class="nav-item-icon">🤝</span> Work With KR
+      </button>
+      <button class="nav-item" data-tab="monetization" onclick="switchTab('monetization', this)">
+        <span class="nav-item-icon">💰</span> Monetization
+      </button>
+      <button class="nav-item" data-tab="speaker" onclick="switchTab('speaker', this)">
+        <span class="nav-item-icon">🎤</span> Speaker
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-badge">
+        <div class="user-avatar">KR</div>
+        <div class="user-info">
+          <div class="user-name" id="user-email-display">Admin</div>
+          <div class="user-role">Administrator</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="handleLogout()">🚪 Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="admin-main">
+    <!-- HEADER -->
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <div class="breadcrumb">
+          <span>Admin</span>
+          <span>›</span>
+          <span class="breadcrumb-current" id="current-page-label">Dashboard</span>
+        </div>
+      </div>
+      <div class="admin-header-right">
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <span>Connected to Supabase</span>
+        </div>
+        <button class="btn-save-all" onclick="saveAllVisible()">
+          💾 Save All Changes
+        </button>
+        <a href="index.html" target="_blank" class="btn-save-all" style="background: transparent; border: 1px solid var(--edge); color: var(--muted); text-decoration: none;">
+          👁️ View Site
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="admin-content">
+
+      <!-- TOAST CONTAINER -->
+      <div class="toast-container" id="toast-container"></div>
+
+      <!-- ==================== DASHBOARD TAB ==================== -->
+      <div class="page-tab-content active" id="tab-dashboard">
+        <div class="welcome-card">
+          <div>
+            <div class="welcome-title">Welcome, KR Henderson 👋</div>
+            <div class="welcome-subtitle">
+              Your website content manager. Edit any text, image, alignment, or sizing across all pages. Changes save directly to your live site.
+            </div>
+          </div>
+          <div class="quick-links">
+            <button class="quick-link" onclick="switchTab('index', document.querySelector('[data-tab=index]'))">Home Page</button>
+            <button class="quick-link" onclick="switchTab('about', document.querySelector('[data-tab=about]'))">About Page</button>
+            <button class="quick-link" onclick="switchTab('author', document.querySelector('[data-tab=author]'))">Books Page</button>
+            <button class="quick-link" onclick="switchTab('second-wind', document.querySelector('[data-tab=second-wind]'))">Second Wind</button>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-pages">9</div>
+            <div class="stat-label">Website Pages</div>
+            <div class="stat-icon">📄</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-items">—</div>
+            <div class="stat-label">Content Items</div>
+            <div class="stat-icon">📝</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-images">—</div>
+            <div class="stat-label">Images Managed</div>
+            <div class="stat-icon">🖼️</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-last-save">—</div>
+            <div class="stat-label">Last Saved</div>
+            <div class="stat-icon">💾</div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-card-header">
+            <div class="section-card-title">
+              <span>🚀</span> Quick Instructions
+              <span class="section-badge">How To Use</span>
+            </div>
+          </div>
+          <div class="section-card-body" style="display: block; padding: 24px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+              <div style="padding: 16px; background: rgba(196,154,58,0.07); border: 1px solid rgba(196,154,58,0.2); border-radius: 10px;">
+                <div style="font-size: 24px; margin-bottom: 8px;">✏️</div>
+                <div style="font-weight: 700; margin-bottom: 4px; font-size: 14px;">Edit Text</div>
+                <div style="color: var(--muted); font-size: 13px; line-height: 1.6;">Click on any page in the left sidebar. Find the section and type new text in the fields. Click "Save Section" when done.</div>
+              </div>
+              <div style="padding: 16px; background: rgba(196,154,58,0.07); border: 1px solid rgba(196,154,58,0.2); border-radius: 10px;">
+                <div style="font-size: 24px; margin-bottom: 8px;">🖼️</div>
+                <div style="font-weight: 700; margin-bottom: 4px; font-size: 14px;">Replace Images</div>
+                <div style="color: var(--muted); font-size: 13px; line-height: 1.6;">Click "Upload New Image" under any image field. Select your file. It uploads to Supabase and updates the site instantly.</div>
+              </div>
+              <div style="padding: 16px; background: rgba(196,154,58,0.07); border: 1px solid rgba(196,154,58,0.2); border-radius: 10px;">
+                <div style="font-size: 24px; margin-bottom: 8px;">↔️</div>
+                <div style="font-weight: 700; margin-bottom: 4px; font-size: 14px;">Alignment & Size</div>
+                <div style="color: var(--muted); font-size: 13px; line-height: 1.6;">Use Left / Center / Right buttons for alignment. Set Width, Height, Max-Width in the size fields. Choose Contain/Cover/Crop for image fitting.</div>
+              </div>
+              <div style="padding: 16px; background: rgba(196,154,58,0.07); border: 1px solid rgba(196,154,58,0.2); border-radius: 10px;">
+                <div style="font-size: 24px; margin-bottom: 8px;">💾</div>
+                <div style="font-weight: 700; margin-bottom: 4px; font-size: 14px;">Save Changes</div>
+                <div style="color: var(--muted); font-size: 13px; line-height: 1.6;">Click "Save Section" to save one section, or "Save All Changes" in the top bar to save everything at once. Changes are live immediately.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== INDEX PAGE TAB ==================== -->
+      <div class="page-tab-content" id="tab-index">
+        <div id="content-index"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== ABOUT PAGE TAB ==================== -->
+      <div class="page-tab-content" id="tab-about">
+        <div id="content-about"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== AUTHOR PAGE TAB ==================== -->
+      <div class="page-tab-content" id="tab-author">
+        <div id="content-author"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== SECOND WIND TAB ==================== -->
+      <div class="page-tab-content" id="tab-second-wind">
+        <div id="content-second-wind"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== WHOY TAB ==================== -->
+      <div class="page-tab-content" id="tab-whoy">
+        <div id="content-whoy"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== WORK WITH KR TAB ==================== -->
+      <div class="page-tab-content" id="tab-work-with-kr">
+        <div id="content-work-with-kr"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== MONETIZATION TAB ==================== -->
+      <div class="page-tab-content" id="tab-monetization">
+        <div id="content-monetization"><!-- Dynamic content loaded here --></div>
+      </div>
+
+      <!-- ==================== SPEAKER TAB ==================== -->
+      <div class="page-tab-content" id="tab-speaker">
+        <div id="content-speaker"><!-- Dynamic content loaded here --></div>
+      </div>
+
+    </div><!-- /admin-content -->
+  </main>
+</div><!-- /admin-app -->
+
+<script src="admin.js"></script>
+</body>
+</html>

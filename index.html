@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>New Vision Enterprise</title>
+    <meta name="description" content="New Vision Enterprise — The parent platform behind frameworks, content, and tools built for men navigating responsibility, pressure, and purpose." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -31,20 +34,20 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <h1 class="tagline">Welcome to New Vision Enterprise</h1>
-          <p class="subhead">
+          <h1 class="tagline" data-cms-key="hero.title">Welcome to New Vision Enterprise</h1>
+          <p class="subhead" data-cms-key="hero.subtitle">
             This is not motivation. This is structure. New Vision Enterprise is the parent platform
             behind frameworks, content, and tools built for men navigating responsibility, pressure,
             and purpose - especially in the second half of life.
           </p>
           <div class="hero-cta">
-            <a class="btn" href="about.html">Learn More</a>
-            <a class="btn secondary" href="monetization.html">Start Your Second Wind</a>
+            <a class="btn" href="about.html" data-cms-key="hero.btn1_text">Learn More</a>
+            <a class="btn secondary" href="monetization.html" data-cms-key="hero.btn2_text">Start Your Second Wind</a>
           </div>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/308.png" alt="KR Henderson portrait" />
-          <div class="tile">
+          <img src="pictures%20for%20web/308.png" alt="KR Henderson portrait" data-cms-key="hero.image_url" data-cms-type="image" />
+          <div class="tile" data-cms-key="hero.tile_text">
             <strong>KR Henderson</strong><br />Speaker. Author. Builder.
           </div>
         </div>
@@ -53,8 +56,8 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">The Ecosystem</h2>
-        <p class="section-subtitle reveal">
+        <h2 class="section-title reveal" data-cms-key="ecosystem.title">The Ecosystem</h2>
+        <p class="section-subtitle reveal" data-cms-key="ecosystem.subtitle">
           New Vision Enterprise is the parent brand with Second Wind and WHOY under the umbrella.
         </p>
         <div class="logo-grid">
@@ -84,8 +87,8 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Second Wind Is For:</h2>
-        <p class="section-subtitle reveal">
+        <h2 class="section-title reveal" data-cms-key="for_whom.title">Second Wind Is For:</h2>
+        <p class="section-subtitle reveal" data-cms-key="for_whom.subtitle">
           The men who feel behind, carry weight silently, rebuild after setbacks, and raise children
           later in life.
         </p>
@@ -109,19 +112,19 @@
     <section class="section">
       <div class="container split">
         <div class="reveal">
-          <h2 class="section-title">Meet KR Henderson</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title" data-cms-key="meet_kr.title">Meet KR Henderson</h2>
+          <p class="section-subtitle" data-cms-key="meet_kr.subtitle">
             Speaker. Author. Builder. KR Henderson is the founder of New Vision Enterprise and the
             voice behind the Second Wind movement and WHOY (Work Harder On Yourself). With a
             background in corporate leadership and real-life responsibility, he teaches structure that
             holds under pressure.
           </p>
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-cms-key="meet_kr.quote">
             "Men do not need more motivation. They need systems that work when life does not."
           </p>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/333.png" alt="KR Henderson speaking" />
+          <img src="pictures%20for%20web/333.png" alt="KR Henderson speaking" data-cms-key="meet_kr.image_url" data-cms-type="image" />
         </div>
       </div>
     </section>
@@ -149,8 +152,8 @@
     <section class="section">
       <div class="container banner reveal">
         <div>
-          <h2 class="section-title">You are not late. You are assigned.</h2>
-          <p class="section-subtitle">Step into the system built for men who are done playing small.</p>
+          <h2 class="section-title" data-cms-key="banner.title">You are not late. You are assigned.</h2>
+          <p class="section-subtitle" data-cms-key="banner.subtitle">Step into the system built for men who are done playing small.</p>
         </div>
         <div class="hero-cta">
           <a class="btn" href="monetization.html">Start Your Second Wind</a>
@@ -162,10 +165,10 @@
     <footer class="footer">
       <div class="container">
         <div class="split">
-          <div>
+          <div data-cms-key="footer.left">
             <strong>New Vision Enterprise</strong><br />KRNewVision.net
           </div>
-          <div>
+          <div data-cms-key="footer.right">
             Structured for men navigating responsibility, pressure, and purpose.
           </div>
         </div>
@@ -173,5 +176,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cms.js"></script>
   </body>
 </html>

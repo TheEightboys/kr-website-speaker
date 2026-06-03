@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Work With KR - New Vision Enterprise</title>
+    <meta name="description" content="Work with KR Henderson — keynote speaking, corporate training, one-on-one coaching. Direct. Practical. Built for application." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -32,8 +35,8 @@
       <div class="container hero-grid">
         <div class="reveal">
           <span class="pill">Work With KR</span>
-          <h1 class="tagline">Bring Transformation to Your Organization</h1>
-          <p class="subhead">
+          <h1 class="tagline" data-cms-key="hero.title">Bring Transformation to Your Organization</h1>
+          <p class="subhead" data-cms-key="hero.subtitle">
             KR Henderson works directly with organizations, teams, and individuals ready to implement
             real change. Whether it is a keynote, corporate training, or one-on-one coaching—the structure is the same:
             direct, practical, built for application.
@@ -44,16 +47,16 @@
           </div>
         </div>
         <div class="image-stack reveal">
-          <img src="logos/674.png" alt="KR Henderson speaking" />
-          <div class="tile">Direct. Practical. Transformation.</div>
+          <img src="logos/674.png" alt="KR Henderson speaking" data-cms-key="hero.image_url" data-cms-type="image" />
+          <div class="tile" data-cms-key="hero.tile_text">Direct. Practical. Transformation.</div>
         </div>
       </div>
     </section>
 
     <section class="section" id="services">
       <div class="container">
-        <h2 class="section-title reveal">Services</h2>
-        <p class="section-subtitle reveal">
+        <h2 class="section-title reveal" data-cms-key="services.title">Services</h2>
+        <p class="section-subtitle reveal" data-cms-key="services.subtitle">
           Work with KR Henderson in the way that fits your needs and timeline.
         </p>
         <div class="grid-3">
@@ -88,7 +91,7 @@
     <section class="section">
       <div class="container split">
         <div class="reveal">
-          <h2 class="section-title">Why Organizations Choose KR</h2>
+          <h2 class="section-title" data-cms-key="why.title">Why Organizations Choose KR</h2>
           <ul class="list">
             <li><strong>Practical Framework</strong> — Not motivation, but structure you can implement immediately</li>
             <li><strong>Direct Communication</strong> — No corporate speak, no fluff, no wasted time</li>
@@ -98,7 +101,7 @@
           </ul>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/219.png" alt="KR Henderson coaching" />
+          <img src="pictures%20for%20web/219.png" alt="KR Henderson coaching" data-cms-key="why.image_url" data-cms-type="image" />
         </div>
       </div>
     </section>
@@ -106,7 +109,7 @@
     <section class="section">
       <div class="container split" style="flex-direction: row-reverse;">
         <div class="reveal">
-          <h2 class="section-title">The Booking Process</h2>
+          <h2 class="section-title" data-cms-key="process.title">The Booking Process</h2>
           <ol style="padding-left: 2rem;">
             <li style="margin-bottom: 1.5rem;">
               <strong>Download the Speaker Agreement</strong> — Review our terms and expectations
@@ -118,15 +121,15 @@
               <strong>Initial Conversation</strong> — KR speaks with your team to understand the opportunity
             </li>
             <li style="margin-bottom: 1.5rem;">
-              <strong>Customization & Confirmation</strong> — We tailor the engagement to your needs and confirm details
+              <strong>Customization &amp; Confirmation</strong> — We tailor the engagement to your needs and confirm details
             </li>
             <li style="margin-bottom: 1.5rem;">
-              <strong>Delivery & Follow-Up</strong> — KR delivers, and we provide resources for ongoing implementation
+              <strong>Delivery &amp; Follow-Up</strong> — KR delivers, and we provide resources for ongoing implementation
             </li>
           </ol>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/341.png" alt="Process" />
+          <img src="pictures%20for%20web/341.png" alt="Process" data-cms-key="process.image_url" data-cms-type="image" />
         </div>
       </div>
     </section>
@@ -134,8 +137,8 @@
     <section class="section">
       <div class="container banner reveal">
         <div>
-          <h2 class="section-title">Ready to Transform Your Team?</h2>
-          <p class="section-subtitle">Let's talk about what's possible.</p>
+          <h2 class="section-title" data-cms-key="banner.title">Ready to Transform Your Team?</h2>
+          <p class="section-subtitle" data-cms-key="banner.subtitle">Let's talk about what's possible.</p>
         </div>
         <div class="hero-cta">
           <a class="btn" href="speaker-agreement.html">Download Agreement</a>
@@ -158,5 +161,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cms.js"></script>
   </body>
 </html>

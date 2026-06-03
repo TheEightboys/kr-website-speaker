@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -32,8 +34,8 @@
       <div class="container hero-grid">
         <div class="reveal">
           <span class="pill">Speaking</span>
-          <h1 class="tagline">Keynote Speaking That Transforms</h1>
-          <p class="subhead">
+          <h1 class="tagline" data-cms-key="hero.title">Keynote Speaking That Transforms</h1>
+          <p class="subhead" data-cms-key="hero.subtitle">
             KR Henderson delivers powerful keynotes that challenge men to work harder on themselves
             than they do on their circumstances. His message is direct, practical, and built for
             immediate application.
@@ -44,7 +46,7 @@
           </div>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/942.png" alt="KR Henderson speaking on stage" />
+          <img src="pictures%20for%20web/942.png" alt="KR Henderson speaking on stage" data-cms-key="hero.image_url" data-cms-type="image" />
           <div class="tile">Direct. Practical. Transformational.</div>
         </div>
       </div>
@@ -52,8 +54,8 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Speaking Topics</h2>
-        <p class="section-subtitle reveal">
+        <h2 class="section-title reveal" data-cms-key="topics.title">Speaking Topics</h2>
+        <p class="section-subtitle reveal" data-cms-key="topics.subtitle">
           Each keynote is customized to your audience, event goals, and organizational needs.
         </p>
         <div class="grid-3">
@@ -155,8 +157,8 @@
     <section class="section">
       <div class="container banner reveal">
         <div>
-          <h2 class="section-title">Ready to Book KR Henderson?</h2>
-          <p class="section-subtitle">Download the speaker agreement and submit your request today.</p>
+          <h2 class="section-title" data-cms-key="banner.title">Ready to Book KR Henderson?</h2>
+          <p class="section-subtitle" data-cms-key="banner.subtitle">Download the speaker agreement and submit your request today.</p>
         </div>
         <div class="hero-cta">
           <a class="btn" href="speaker-agreement.html">Book Now</a>
@@ -179,5 +181,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cms.js"></script>
   </body>
 </html>

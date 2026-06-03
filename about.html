@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About - New Vision Enterprise</title>
+    <meta name="description" content="About KR Henderson and New Vision Enterprise — helping men transform through the Second Wind and WHOY methodology." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -32,13 +35,13 @@
       <div class="container hero-grid">
         <div class="reveal">
           <span class="pill">About</span>
-          <h1 class="tagline">About New Vision Enterprise</h1>
-          <p class="subhead">
+          <h1 class="tagline" data-cms-key="hero.title">About New Vision Enterprise</h1>
+          <p class="subhead" data-cms-key="hero.subtitle">
             New Vision Enterprise exists to help men transform their lives by developing a new vision for who they are, embracing their Second Wind, and working harder on themselves than they do on their circumstances.
           </p>
         </div>
         <div class="image-stack reveal">
-          <img src="logos/1514.png" alt="KR Henderson portrait" />
+          <img src="logos/1514.png" alt="KR Henderson portrait" data-cms-key="hero.image_url" data-cms-type="image" />
         </div>
       </div>
     </section>
@@ -46,22 +49,22 @@
     <section class="section">
       <div class="container split">
         <div class="reveal">
-          <h2 class="section-title">The Founder</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title" data-cms-key="founder.title">The Founder</h2>
+          <p class="section-subtitle" data-cms-key="founder.subtitle">
             KR Henderson is the Founder and Chief Development Officer of New Vision Enterprise, an educational and personal development company focused on leadership, growth, and transformation. Through speaking, coaching, training, and the WHOY (Work Harder On Yourself) methodology, he helps people develop a new vision for their lives and reach their full potential.
           </p>
         </div>
         <div class="image-stack reveal">
-          <img src="pictures%20for%20web/yourstory.png" alt="KR Henderson's story" />
+          <img src="pictures%20for%20web/yourstory.png" alt="KR Henderson's story" data-cms-key="founder.image_url" data-cms-type="image" />
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Mission</h2>
+        <h2 class="section-title reveal" data-cms-key="mission.title">Mission</h2>
         <div class="card reveal" style="text-align: center; padding: 3rem; font-size: 1.25rem; line-height: 1.8;">
-          <p style="font-weight: 600; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent);">
+          <p style="font-weight: 600; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent);" data-cms-key="mission.quote">
             "To help men transform their lives by working harder on themselves than they do on their circumstances."
           </p>
         </div>
@@ -70,9 +73,9 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Vision</h2>
+        <h2 class="section-title reveal" data-cms-key="vision.title">Vision</h2>
         <div class="card reveal" style="text-align: center; padding: 3rem; font-size: 1.25rem; line-height: 1.8;">
-          <p style="font-weight: 600; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent);">
+          <p style="font-weight: 600; font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent);" data-cms-key="vision.quote">
             "To create a generation of men who lead with responsibility, live with purpose, and never stop developing themselves."
           </p>
         </div>
@@ -95,7 +98,7 @@
             <ul class="list">
               <li>Podcast</li>
               <li>Speaking Engagements</li>
-              <li>Content & Stories</li>
+              <li>Content &amp; Stories</li>
             </ul>
           </div>
           <div class="reveal">
@@ -105,9 +108,9 @@
             </h3>
             <p class="subhead">The methodology.</p>
             <ul class="list">
-              <li>Books & Written Content</li>
-              <li>Courses & Training</li>
-              <li>Workshops & Events</li>
+              <li>Books &amp; Written Content</li>
+              <li>Courses &amp; Training</li>
+              <li>Workshops &amp; Events</li>
             </ul>
           </div>
         </div>
@@ -117,8 +120,8 @@
     <section class="section">
       <div class="container banner reveal">
         <div>
-          <h2 class="section-title">Ready to Transform?</h2>
-          <p class="section-subtitle">Choose your path and get started today.</p>
+          <h2 class="section-title" data-cms-key="banner.title">Ready to Transform?</h2>
+          <p class="section-subtitle" data-cms-key="banner.subtitle">Choose your path and get started today.</p>
         </div>
         <div class="hero-cta">
           <a class="btn" href="second-wind.html">Explore Second Wind</a>
@@ -141,5 +144,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cms.js"></script>
   </body>
 </html>
